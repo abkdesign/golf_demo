@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { setFacilities, getFacilities, initFacilities} from './api/localstorage';
+import CardsList from './feature/facility/CardsList';
 
 function App() {
   initFacilities();
@@ -13,19 +14,17 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <ul className="menuList">
+          <li className="menuItem">Home</li>
+          <li className="menuItem">Facility</li>
+          <li className="menuItem">Admin</li>
+          <li className="menuItem">MyTournaments</li>
+        </ul>
       </header>
+      <h1>Facility list</h1>
+      <main>
+        <CardsList/>
+      </main>
     </div>
   );
 }
